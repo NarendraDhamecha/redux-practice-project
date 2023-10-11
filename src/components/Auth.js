@@ -3,13 +3,15 @@ import { authActions } from '../store';
 import { useDispatch } from 'react-redux';
 
 const Auth = () => {
+  const token = "hsakkdjkl"
+  const email = "nomail@nomail.com"
 
   const dispatch = useDispatch()
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     
-    dispatch(authActions.logIn())
+    dispatch(authActions.logIn({token, email}))
   }
 
   return (
